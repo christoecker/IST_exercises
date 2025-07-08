@@ -1,0 +1,32 @@
+Aufgabe: Steuerung eines Mischprozesses im Reaktor
+
+** Worum es geht **
+In dieser Aufgabe entwickelst du ein Steuerungsprogramm für einen Reaktor. Je nach Betriebsmodus, Füllstand und Temperatur sollen das Ventil und das Rührwerk automatisch oder manuell geschaltet werden.
+Du implementierst die Logik direkt im MAIN-Programm. Die Steuerung erfolgt abhängig vom Betriebsmodus über eine CASE...OF-Struktur, innerhalb derer du – je nach Modus – bedingte Anweisungen mit IF...THEN...ELSE verwendest.
+
+** Spezifikation für die zu entwickelnde Lösung **
+Im Programm gibt es vier definierte Betriebsmodi, die über die Ganzzahlvariable nMode gesteuert werden:
+ - Modus 0 (OFF): Sowohl das Ventil als auch das Rührwerk sind ausgeschaltet.
+ - Modus 1 (AUTO): Die Steuerung erfolgt automatisch basierend auf Füllstand und Temperatur.
+     * Ist der Füllstand größer als 10,0 m und die Temperatur größer als 60,0 °C, wird das Rührwerk eingeschaltet.
+     * Ist der Füllstand kleiner oder gleich 3,0 m, wird das Ventil geschlossen.
+     * In allen anderen Fällen ist das Ventil geöffnet.
+ - Modus 2 (MANUAL): Die Steuerung erfolgt manuell über die Eingänge bManualValveOpen (Ventil) und bManualAgitatorOn (Rührwerk).
+ - Modus 3 (MAINTENANCE): Nur das Ventil darf manuell gesteuert werden. Das Rührwerk bleibt in jedem Fall ausgeschaltet.
+ - Alle anderen Werte führen zu einem Fehlermodus, in dem Ventil und Rührwerk ausgeschaltet werden (Sicherheitszustand).
+
+** Anforderungen an deine Lösung **
+ - Verwende eine CASE...OF-Struktur, um die Modusauswahl umzusetzen.
+ - Innerhalb der Fälle verwendest du bei Bedarf IF...THEN...ELSE-Anweisungen.
+ - Verwende keine Schleifen, keine Funktionen und keine zusätzlichen Bausteine.
+ - Schreibe den gesamten Code ausschließlich im MAIN-Programm.
+ - Beachte, dass du nur die vorgegebenen Variablen verwenden sollst.
+ - Achte auf korrekte logische Verknüpfungen, Vergleichsoperatoren und übersichtliche Struktur.
+
+** Teste deine Lösung **
+Nach deiner Implementierung kannst du deine Lösung mit dem Baustein FB_CheckProcessControl selbst testen. Dazu wurden im MAIN-Programm bereits Testzeilen vorbereitet – verändere diese nicht. Du brauchst lediglich die Eingangsvariablen (nMode, rLevel, rTemp, bManualValveOpen, bManualAgitatorOn) z. B. im Online-Modus mit „Write to PLC“ zu setzen.
+
+Die beiden booleschen Variablen bIsValveCorrect und bIsAgitatorCorrect zeigen dir an, ob deine Umsetzung korrekt ist:
+ - bIsValveCorrect = TRUE → dein Ventil-Verhalten stimmt.
+ - bIsAgitatorCorrect = TRUE → dein Rührwerk-Verhalten stimmt.
+Tipp: Teste gezielt verschiedene Kombinationen von Modus, Füllstand und Temperatur, um alle Fälle abzudecken.
