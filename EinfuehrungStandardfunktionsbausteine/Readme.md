@@ -17,9 +17,8 @@ Die erste LED10 soll sofort eingeschaltet werden, LED11 1s, LED12 2s und LED13 3
 
 ### Projektstand
 
-Dein Kollege hat dir sein Projekt als zip-Ordner zukommen lassen. 
-In diesem hat er bereits alle nötigen Variablen deklariert und verknüpft. 
-Gearbeitet hat er an der MAIN im Ordner POUs der PLC_Rack. Nur hier muss etwas am Code geändert werden. 
+Dein Kollege hat dir sein Programm als xml-Datei zukommen lassen. 
+In diesem hat er bereits alle nötigen Variablen deklariert.
 Er hat bereits die Funktionsweise der Taster implementiert, jedoch funktioniert es so nicht richtig. 
 Die LEDs hat er zwar auch bereits angesteuert, jedoch entspricht seine Implementierung nicht der Anforderung.
 
@@ -29,13 +28,15 @@ Die LEDs hat er zwar auch bereits angesteuert, jedoch entspricht seine Implement
 ### Arbeitsauftrag
 
 Um folgendes hat dich dein Kollege gebeten:
-1. Entpacke den zip-Ordner und öffne das Projekt.
-2. Starte das Projekt lokal auf deinem Laptop im Run-Modus, logge dich in beide SPS ein und starte sie.
-3. Finde und erkläre kurz das auftretende Problem beim Zähler.
-4. Verwende die bereits deklarierten Trigger und den Zähler, um das Programm nach den Anforderungen umzuschreiben.
-5. Teste dein Programm.
-6. Verwende anschließend die Timer, um die Anforderungen bezüglich der LEDs umzusetzen.
-7. Teste dein Programm erneut.
+1. Lade dir aus dem ILIAS die Simulation des Demo-Racks herunter, entpacke und öffne das Projekt.
+2. Lösche das aktuelle MAIN-Programm im Ordner POUs der PLC_Rack und importiere dort die xml-Datei deines Kollegen.
+3. Erstelle das Projekt und verknüpfe die Ein- und Ausgänge.
+4. Starte das Projekt im Run-Modus, logge dich in beide SPS ein und starte sie.
+5. Finde und erkläre kurz das auftretende Problem beim Zähler.
+6. Verwende die bereits deklarierten Trigger und den Zähler, um das Programm nach den Anforderungen umzuschreiben.
+7. Teste dein Programm.
+8. Verwende anschließend die Timer, um die Anforderungen bezüglich der LEDs umzusetzen.
+9. Teste dein Programm erneut.
 
 > [!IMPORTANT]
 > Dein Kollege erinnert dich daran, dass du vor dem Start des Run-Modus unter System->Echtzeit die Kerne deines Laptops einlesen und einen der isolierten Kerne auswählen solltest, damit du das Projekt ohne Probleme starten kannst.
