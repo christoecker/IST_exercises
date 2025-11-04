@@ -1,15 +1,23 @@
 # Aufgabe: Motorprogrammierung per UML-Zustandsdiagramm
 
 ## Worum es geht
-Für die Simulation des Demo-Racks sollst du eine Motorsteuerung programmieren. Folgende Spezifikation liegt dir bereits vor:
+Für die Simulation des Demo-Racks sollst du eine Motorsteuerung als einen Funktionsbaustein *FB_Motor* programmieren. Folgende Spezifikation liegt dir bereits vor:
 
-<img src="MotorprogrammierungUML.png" alt="UML-Zustandsdiagramm für die Motorsteuerung" width="300" height="200">
+<img src="MotorprogrammierungUML.png" alt="UML-Zustandsdiagramm für die Motorsteuerung" width="700" height="450">
 
-Es sind drei boolsche Variablen definiert, welche die Bedingungen für die Transitionen der Zustände definieren:
+Es sollen drei boolsche Variablen als Input definiert werden, welche die Bedingungen für die Transitionen der Zustände definieren:
 
 - **bStart**: Freigabe der Steuerung
 - **bFahren**: Manuelles Einschalten des Motors
 - **bStartStop**: Einschalten des Start-Stopp-Modus
+
+Folgende interne Variablen werden benötigt:
+
+```
+bMotorEnable  AT%Q*  : BOOL;
+nMotorVelo    AT%Q*  : INT;
+fbTon                : TON;
+```
 
 Damit der Motor im Zustand *fahrbereit* auch fahrbereit ist, soll die Motorgeschwindigkeit (**nMotorVelo**) hier auf 1000 gesetzt werden. Im Zustand *fahrend* soll der Motor durch das setzen 
 der Variable **bMotorEnable** eingeschaltet werden. Wird der Zustand verlassen, so soll auch der Motor wieder stoppen. Im Start-Stopp-Modus soll der Motor abwechselnd für jeweils 2 Sekunden 
@@ -49,11 +57,11 @@ wird automatisch *TRUE* eingesetzt. Durch einen Doppelklick darauf, kann diese b
 Folgendes soll hier gemacht werden:
 
 1. Lade die Simulation des Demo-Racks aus ILIAS herunter.
-2. Lade den hier befindelichen Baustein *FB_Motor* herunter. In diesem ist bereits der Deklarationsteil implementiert.
-3. Öffne die Simulation in TwinCAT und importiere den *FB_Motor*.
-4. Implementiere die Funktionsweise nach dem obigen Bild und beachte dabei die vorherigen Anmerkungen zu UML-Zustandsdiagrammen in TwinCAT.
-5. Deklariere den *FB_Motor* im Main-Programm und gib die Schalter S10, S11 und S12 als entsprechende Eingänge an.
-6. Erstelle das Projekt, verknüpfe die Variablen und aktiviere die Konfiguration.
-7. Wechsle in den Online-Modus und teste den Baustein.
+3. Öffne die Simulation in TwinCAT.
+4. Erstelle einen neuen Funktionsbaustein *FB_Motor* in der SPS *PLC_Rack*. Wähle als Implementierungssprache "UML-Zustandsdiagramm" aus.
+5. Implementiere die Funktionsweise nach dem obigen Bild und beachte dabei die Anmerkungen zu UML-Zustandsdiagrammen in TwinCAT.
+6. Deklariere anschließend den *FB_Motor* im Main-Programm und gib die Schalter S10, S11 und S12 als entsprechende Inputs an.
+7. Erstelle das Projekt, verknüpfe die Variablen und aktiviere die Konfiguration.
+8. Wechsle in den Online-Modus und teste den Funktionsbaustein.
 
 Verhält sich der Motor entsprechend der Anforderungen, so hast du die Aufgabe erfolgreich gelöst.
