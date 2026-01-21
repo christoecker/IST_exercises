@@ -7,7 +7,7 @@ In dieser Programmierübung soll das Erstellen von Objekten einer selbst impleme
 Ziel ist es eine Klasse *Waage* zu erstellen. Es ist ein UML Klassendiagramm gegeben. Anhand dieses Diagramms soll die Funktionsweise für die Demo-Rack-Simulation implementiert werden. 
 
 <div align="center">
-	<img src="Klassendiagramm.pg" alt="UML Klassendiagramm" width="400">
+	<img src="Klassendiagramm.png" alt="UML Klassendiagramm" width="180">
 </div>
 
 Folgende Anmerkungen gibt es zum Diagramm:
