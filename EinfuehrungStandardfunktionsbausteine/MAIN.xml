@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.13.21" creationDateTime="2025-07-11T10:35:19.1083173" />
+  <contentHeader name="PLC_Rack" modificationDateTime="2025-07-11T10:35:19.1104652">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="MAIN" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="bS10" address="%I*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Schalter S10</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bS11" address="%I*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Schalter S11</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bS12" address="%I*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Schalter S12</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bL10" address="%Q*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> LED S10</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bL11" address="%Q*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> LED S11</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bL12" address="%Q*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> LED S12</xhtml>
+              </documentation>
+            </variable>
+            <variable name="bL13" address="%Q*">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> LED S13</xhtml>
+              </documentation>
+            </variable>
+            <variable name="nCount" address="%Q*">
+              <type>
+                <LREAL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Zählvariable</xhtml>
+              </documentation>
+            </variable>
+            <variable name="ton1">
+              <type>
+                <derived name="TON" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Timer</xhtml>
+              </documentation>
+            </variable>
+            <variable name="ton2">
+              <type>
+                <derived name="TON" />
+              </type>
+            </variable>
+            <variable name="ton3">
+              <type>
+                <derived name="TON" />
+              </type>
+            </variable>
+            <variable name="ctud">
+              <type>
+                <derived name="CTUD" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Zähler</xhtml>
+              </documentation>
+            </variable>
+            <variable name="rTrig">
+              <type>
+                <derived name="R_TRIG" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Trigger</xhtml>
+              </documentation>
+            </variable>
+            <variable name="fTrig">
+              <type>
+                <derived name="F_TRIG" />
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// Hier den Code ändern
+
+// TASTER
+	// Counter erhöhen, wenn Taster S10 gedrückt
+	IF bS10 THEN
+		nCount := LIMIT(0,nCount + 1,10);
+	END_IF
+	// Counter verringern, wenn Taster S11 gedrückt
+	IF bS11 THEN
+		nCount := LIMIT(0,nCount - 1,10);
+	END_IF
+
+// LEDs
+	bL10 := bS10;
+	bL11 := bS10;
+	bL12 := bS10;
+	bL13 := bS10;
+	
+	
+	
+
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">PROGRAM MAIN
+VAR
+	// Input Variable
+	bS10 AT%I*: BOOL;				// Schalter S10
+	bS11 AT%I*: BOOL;				// Schalter S11
+	bS12 AT%I*: BOOL;				// Schalter S12
+	
+	// Output Variable
+	bL10 		AT%Q*	: BOOL;		// LED S10
+	bL11 		AT%Q*	: BOOL;		// LED S11
+	bL12 		AT%Q*	: BOOL;		// LED S12
+	bL13 		AT%Q*	: BOOL;		// LED S13
+	nCount		AT%Q*	: LREAL;	// Zählvariable
+	
+	// Timer
+	ton1	: TON;
+	ton2	: TON;
+	ton3	: TON;
+	
+	// Zähler
+	ctud	: CTUD;
+	
+	// Trigger
+	rTrig	: R_TRIG;
+	fTrig	: F_TRIG;
+	
+END_VAR
+</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>8bf67bd6-ddf6-4558-892a-a88899b201f1</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="MAIN" ObjectId="8bf67bd6-ddf6-4558-892a-a88899b201f1" />
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
