@@ -1,11 +1,11 @@
-# Programmieraufgabe: Array mit variabler Länge an einen FB übergeben
+## Programmieraufgabe: Array mit variabler Länge an einen FB übergeben
 
-## Kurzbeschreibung
+### Kurzbeschreibung
 In dieser Aufgabe soll ein vorgegebener Funktionsbaustein so angepasst werden, dass er **Arrays mit variabler Länge** verarbeiten kann. Dazu soll der Eingabeparameter als **offenes Array** deklariert und die gültigen Grenzen mit `LOWER_BOUND` und `UPPER_BOUND` ermittelt werden.
 
 ---
 
-## Aufgabenstellung
+### Aufgabenstellung
 Ein vorhandener Funktionsbaustein `FB_ArraySum` berechnet aktuell die Summe eines eindimensionalen Integer-Arrays mit **fest vorgegebener Länge**.
 
 Ändere den Code des Funktionsbausteins so, dass:
@@ -19,7 +19,7 @@ Ein vorhandener Funktionsbaustein `FB_ArraySum` berechnet aktuell die Summe eine
 
 ---
 
-## Vorgegebener Code
+### Vorgegebener Code
 
 Die Ausgangsbasis für diese Aufgabe ist in der Datei `Ueb_03_060_Arrays.tpzip` enthalten.
 Das Projekt besteht aus:
@@ -54,6 +54,6 @@ fbArrSum(aList:= aArray1, bCalc:= bRun, fSum=> fRes);
 
 ---
 
-## Erwartetes Verhalten
+### Erwartetes Verhalten
 Nach der Anpassung des Funktionsbausteins sollen sowohl `aArray1` als auch `aArray2` an den Funkltionsbaustein übergeben werden können, ohne dass dafür der Wert der globalen Variablen 'GVL.nLen` geändert werden muss.
 
