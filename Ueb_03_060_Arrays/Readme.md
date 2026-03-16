@@ -1,7 +1,7 @@
 ## Programmieraufgabe: Array mit variabler Länge an einen FB übergeben
 
 ### Kurzbeschreibung
-In dieser Aufgabe soll ein vorgegebener Funktionsbaustein so angepasst werden, dass er **Arrays mit variabler Länge** verarbeiten kann. Dazu soll der Eingabeparameter als **offenes Array** deklariert und die gültigen Grenzen mit `LOWER_BOUND` und `UPPER_BOUND` ermittelt werden.
+In dieser Aufgabe soll ein vorgegebener Funktionsbaustein so angepasst werden, dass er **Arrays mit variabler Länge** verarbeiten kann. Dazu soll der Eingabeparameter als **Array mit variabler Länge** deklariert und die gültigen Grenzen mit `LOWER_BOUND` und `UPPER_BOUND` ermittelt werden.
 
 ---
 
