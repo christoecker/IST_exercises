@@ -26,7 +26,7 @@ Diese Darstellung soll in den folgenden Teilaufgaben verbessert werden.
 
 ## Vorgegebener Code
 
-Die Ausgangsbasis für diese Aufgabe ist in der Datei **`Ueb_03_070_ENUM_STRUCT.tpzip`** enthalten.
+Die Ausgangsbasis für diese Aufgabe ist in der Datei **`Ueb_03_050_ENUM_STRUCT.tpzip`** enthalten.
 
 Das Projekt besteht aus:
 
