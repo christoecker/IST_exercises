@@ -28,15 +28,7 @@ Diese Darstellung soll in den folgenden Teilaufgaben verbessert werden.
 
 Die Ausgangsbasis für diese Aufgabe ist in der Datei **`Ueb_03_050_ENUM_STRUCT.tpzip`** enthalten.
 
-Das Projekt besteht aus:
-
-- **`MAIN`**  
-  Enthält das Hauptprogramm mit der bisherigen Tanküberwachung
-
-- **`GVL`**  
-  Kann für globale Konstanten oder Hilfsvariablen genutzt werden
-
-Deine Aufgabe ist es, das bestehende Programm in den folgenden drei Schritten anzupassen.
+Das Projekt besteht aus dem MAIN-Programm mit der bisherigen Tanküberwachung. Deine Aufgabe ist es, das bestehende Programm in den folgenden drei Schritten anzupassen.
 
 ---
 
